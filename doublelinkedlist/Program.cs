@@ -10,6 +10,7 @@ namespace doublelinkedlist
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
