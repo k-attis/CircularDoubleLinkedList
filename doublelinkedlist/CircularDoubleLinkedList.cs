@@ -120,5 +120,57 @@ namespace doublelinkedlist
             Act.Prev.Next = Act.Next;
             Act.Next.Prev = Act.Prev;
         }
+
+        public T Get(int Index)
+        {
+            if (Head == null)
+            {
+                throw new OverflowException("Túlindexeltél!");
+            }
+
+            Header<T> Act = Head;
+            int idx = 0;
+
+            while (idx < Index)
+            {
+                Act = Act.Next;
+                idx++;
+
+                if (Act == Head)
+                {
+                    throw new OverflowException("Te barom, túlindexeltél");
+                }
+            }
+
+            return Act.Data;
+        }
+
+        public T this[int Index]
+        {
+            get
+            {
+                return Get(Index);
+            }
+        }
+
+        public int Count
+        {
+            get {
+                if (Head == null)
+                    return 0;
+
+                Header<T> Act = Head;
+                int cnt = 0;
+
+                while(true)
+                {
+                    Act = Act.Next;
+                    cnt++;
+
+                    if (Act == Head)
+                        return cnt;
+                }
+            }
+        }
     }
 }

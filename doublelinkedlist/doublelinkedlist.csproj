@@ -48,6 +48,7 @@
     <Compile Include="CircularDoubleLinkedList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Teszt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
